@@ -17,19 +17,19 @@ class Bateau extends Vehicule {
 	}
 
 	public function getLongueur(){
-		return $this->$longueur;
+		return $this->longueur;
 	}
 
 	public function setLongueur($longueur){
-		$this->$longueur = $longueur;
+		$this->longueur = $longueur;
 	}
 
 	public function getLargeur(){
-		return $this->$largeur;
+		return $this->largeur;
 	}
 
 	public function setLargeur($largeur){
-		$this->$longueur = $largeur;
+		$this->longueur = $largeur;
 	}
 
 	public static function getNbBateaux(){
@@ -41,15 +41,15 @@ class Bateau extends Vehicule {
 	}
 
 	public function getNbNoeudsParcourus(){
-		return $this->$nbNoeudsParcourus;
+		return $this->nbNoeudsParcourus;
 	}
 
 	public function setNbNoeudsParcourus($nombreNoeuds){
-		$this->$nbNoeudsParcourus = $nbNoeudsParcourus;
+		$this->nbNoeudsParcourus = $nbNoeudsParcourus;
 	}
 
 	public function avancer($nbNoeudsParcourus){
-		$this->$nbNoeudsParcourus += $nbNoeudsParcourus;
+		$this->nbNoeudsParcourus += $nbNoeudsParcourus;
 	}
 
 }

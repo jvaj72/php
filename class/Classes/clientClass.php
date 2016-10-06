@@ -30,7 +30,7 @@ class Client {
 	}
 
 	public function setNom($nom){
-		$this->$nom = $nom;
+		$this->nom = $nom;
 	}
 
 	public function getPrenom(){
@@ -38,7 +38,7 @@ class Client {
 	}
 
 	public function setPrenom($prenom){
-		$this->$prenom = $prenom;
+		$this->prenom = $prenom;
 	}
 
 	public function getDateNaissance(){
@@ -86,6 +86,15 @@ class Client {
 	}
 
 	public function setVoitures($voitures){
+
+		foreach ($voitures as $voiture) {
+
+			if(empty($voiture->getClient())){
+				$voiture->setClient($this);
+			}
+
+		}
+
 		$this->voitures = $voitures;
 	}
 
@@ -94,7 +103,17 @@ class Client {
 	}
 
 	public function setBateaux($bateaux){
+
 		$this->bateaux = $bateaux;
+
+		foreach ($this->bateaux as $bateau) {
+
+			if(empty($bateau->getClient())){
+				$bateau->setClient($this);
+			}
+
+		}
+
 	}
 
 }

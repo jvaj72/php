@@ -41,6 +41,7 @@ $client1 = new Client('Herbé', 'Matthieu', '02/02/1987', '24 rue de la bariller
 $tabVoitures = array($voiture1);
 $tabBateaux = array($bateau1, $bateau5);
 
+//J'affecte le taleau de bateaux à mon client
 $client1->setBateaux($tabBateaux);
 $client1->setVoitures($tabVoitures);
 
@@ -50,13 +51,35 @@ $nomBateau = $client1->getBateaux()[1]->getNom();
 
 $voitureClient1 = $client1->getVoitures()[0];
 
-echo 'Nb Km Parcourus à l\origine : ' . $voitureClient1->getNbKmParcourus() . '<br>';
+//echo 'Nb Km Parcourus à l\origine : ' . $voitureClient1->getNbKmParcourus() . '<br>';
 
 $voitureClient1->avancer(150);
 
-echo 'Nb Km Parcourus après avoir avancé' . $voitureClient1->getNbKmParcourus();
+//echo 'Nb Km Parcourus après avoir avancé' . $voitureClient1->getNbKmParcourus();
 
 
+$client2 = new Client('Deleon', 'Robert', '02/02/1957', '34 rue de la république', '72000', 'Le Mans', 'France');
+
+$client2 = $client1;
+
+$client2->setNom('Durand');
+
+//echo "j'ai changé le nom de mon client 2 : " . $client2->getNom() . '<br>';
+//echo "c'est bizarre le nom de mon client1 : " . $client1->getNom() . "  a maintenant aussi changé !";
+
+//Utiliser la fonction clone pour dupliquer un objet et donc avoir deux objets indépendants l'un de l'autre.
+$client3 =  clone($client2) ;
+
+$client3->setNom('Dubois');
+
+//echo 'nom client3 : ' . $client3->getNom() . ' /// nom client2 : ' . $client2->getNom();
+
+
+
+echo 'nom : ' . $client1->getNom() . '<br/>';
+
+$tab = $client1->getBateaux();
+echo 'nom du client du bateau zodiac005 : ' . $tab[1]->getClient()->getNom();
 
 
 

@@ -6,6 +6,7 @@ class Vehicule {
 	protected $modele;
 	protected $couleur;
 	protected $annee;
+	protected $client;
 	private static $nombre = 0;
 
 	public function __construct($nom, $modele, $couleur, $annee){
@@ -55,4 +56,16 @@ class Vehicule {
 	public static function setNombre($nombre){
 		self::$nombre = $nombre;
 	}
+
+	public function getClient(){
+		return $this->client;
+	}
+
+	public function setClient(Client $client){
+		$this->client = $client;
+	}
+
+
+
+
 }
