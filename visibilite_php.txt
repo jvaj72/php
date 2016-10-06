@@ -1,0 +1,5 @@
+public: accessible de partout
+
+private: accessible uniquement au sein de la même classe
+
+protected: privé à partir des autres classes (inaccessible) MAIS public à partir des classes héritées (accessible)
